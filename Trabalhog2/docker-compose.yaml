@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  db:
+    build: ./db
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Valfenda25!
+      MYSQL_DATABASE: livros
+      restart: always
+    ports:
+    - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+      - /init.sql:/docker-entrypoint-initdb.d/
+  web:
+    build: ./web
+    environment:
+      MYSQL_DATABASE: livros
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Valfenda25!
+      MYSQL_HOST: db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  db:
+    driver: local
+
