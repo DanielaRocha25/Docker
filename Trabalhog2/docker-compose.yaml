@@ -4,7 +4,7 @@ services:
     build: ./db
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: Valfenda25!
+      MYSQL_ROOT_PASSWORD: Senha
       MYSQL_DATABASE: livros
       restart: always
     ports:
@@ -16,8 +16,8 @@ services:
     build: ./web
     environment:
       MYSQL_DATABASE: livros
-      MYSQL_USER: root
-      MYSQL_PASSWORD: Valfenda25!
+      MYSQL_USER: abc
+      MYSQL_PASSWORD: senha
       MYSQL_HOST: db
     ports:
       - "3000:3000"
