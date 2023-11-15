@@ -8,8 +8,8 @@ app.use(bodyParser.json())
 const connection = mysql.createPool({
     connectionLimit: 10,
     host: 'db' || 'localhost',
-    user: 'root',
-    password: "Valfenda25!",
+    user: 'abc',
+    password: "senha",
     database: "livros",
     port: 3306
 });
